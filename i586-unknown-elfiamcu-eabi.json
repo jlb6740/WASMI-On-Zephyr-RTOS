@@ -1,0 +1,34 @@
+{
+  "arch": "x86",
+  "cpu": "pentium",
+  "data-layout": "e-m:e-p:32:32-i64:32-f64:32-f128:32-n8:16:32-a:0:32-S32", 
+  "env": "gnu",
+  "executables": true,
+  "has-elf-tls": true,
+  "has-rpath": true,
+  "is-builtin": true,
+  "linker-flavor": "gcc",
+  "link-args": "-march=iamcu -m elf_iamcu -miamcu -msoft-float -nostdlib -fno-builtin",
+  "llvm-target": "i586-unknown-elfiamcu",
+  "max-atomic-width": 64,
+  "os": "linux",
+  "pre-link-args": {
+    "gcc": [
+      "-Wl,--as-needed",
+      "-Wl,-z,noexecstack",
+      "-m elf_iamcu",
+      "-mstack-alignment=4",
+      "-m32",
+      "-msoft-float",
+      "-fno-builtin",
+      "-nostdlib"
+    ]
+  },
+  "relro-level": "full",
+  "stack-probes": true,
+  "target-c-int-width": "32",
+  "target-endian": "little",
+  "target-family": "unix",
+  "target-pointer-width": "32",
+  "vendor": "unknown"
+}

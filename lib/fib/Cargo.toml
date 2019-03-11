@@ -1,0 +1,18 @@
+[package]
+name = "fib"
+version = "0.1.0"
+authors = ["Birch Jr, Johnnie L <johnnie.l.birch.jr@intel.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = ["bindgen"]
+bindgen = ["wasm-bindgen"]
+
+[dependencies]
+wasm-bindgen = {version = "*", optional = true}
+
+[profile.release]
+lto = true
